@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Contact from './components/Contact';
+import Home from './components/Home';
+import Projects from './components/Projects';
 import Footer from './components/Footer';
 
 function App() {
@@ -41,12 +38,10 @@ function App() {
     <div className={`min-h-screen bg-light dark:bg-dark transition-colors duration-300`}>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Education />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
       </main>
       <Footer />
     </div>
